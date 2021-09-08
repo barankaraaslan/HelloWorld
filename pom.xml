@@ -67,6 +67,12 @@
                 </executions>
             </plugin>
         </plugins>
+        <extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh-external</artifactId>
+			</extension>
+		</extensions>
     </build>
 
     <profiles>
@@ -89,4 +95,11 @@
 			</properties>
 		</profile>
     </profiles>
+
+    <distributionManagement>
+		<repository>
+			<id>main</id>
+			<url>scpexe://mvn@mvn.tosba.xyz:/srv/mvn</url>
+		</repository>
+	</distributionManagement>	 
 </project>
