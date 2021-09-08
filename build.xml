@@ -1,0 +1,17 @@
+<project>
+    <target name="generate-build-system">
+        <exec executable="cmake">
+            <arg line="-S src/ -B target/build"/>
+        </exec>
+    </target>
+    <target name="build">
+        <exec executable="cmake">
+            <arg line="--build target/build"/>
+        </exec>
+    </target>
+    <target name="install-for-packaging">
+        <exec executable="cmake">
+            <arg line="--install target/build --prefix target/pkg"/>
+        </exec>
+    </target>
+</project>
